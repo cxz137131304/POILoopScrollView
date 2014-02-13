@@ -401,7 +401,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "POILoopScrollView/POILoopScrollView-Prefix.pch";
 				INFOPLIST_FILE = "POILoopScrollView/POILoopScrollView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -414,7 +416,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "POILoopScrollView/POILoopScrollView-Prefix.pch";
 				INFOPLIST_FILE = "POILoopScrollView/POILoopScrollView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -480,6 +484,7 @@
 				29160C561895068C0041802E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29160C571895068C0041802E /* Build configuration list for PBXNativeTarget "POILoopScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +493,7 @@
 				29160C591895068C0041802E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

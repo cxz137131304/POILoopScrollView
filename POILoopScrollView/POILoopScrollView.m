@@ -185,7 +185,6 @@
 
 #pragma mark - Scroll View delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    _isScrolling = YES;
     CGFloat offsetX = scrollView.contentOffset.x;
     
     NSInteger page = (offsetX + scrollView.frame.size.width / 2) / scrollView.frame.size.width;
@@ -212,6 +211,11 @@
         _times = 0;
     }
     
+    if ((scrollView.contentOffset.x / scrollView.frame.size.width) == ((int)scrollView.contentOffset.x / (int)scrollView.frame.size.width)) {
+        _isScrolling = NO;
+    } else {
+        _isScrolling = YES;
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
