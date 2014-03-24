@@ -167,6 +167,8 @@
 - (void)loopScrollAnimated {
     _times ++;
     if (_animated == YES && _times >= _animatedTime) {
+        _times = 0;
+        
         CGFloat offsetX = _loopScrollView.contentOffset.x;
         NSInteger page = offsetX / _loopScrollView.frame.size.width;
         [_loopScrollView setContentOffset:CGPointMake(_loopScrollView.frame.size.width*(page+1), 0) animated:YES];
