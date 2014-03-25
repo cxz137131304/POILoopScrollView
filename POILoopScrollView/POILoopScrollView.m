@@ -173,7 +173,10 @@
         NSInteger page = offsetX / _loopScrollView.frame.size.width;
         [_loopScrollView setContentOffset:CGPointMake(_loopScrollView.frame.size.width*(page+1), 0) animated:YES];
     }
-    [self performSelector:@selector(loopScrollAnimated) withObject:Nil afterDelay:1];
+    
+    if (_animated == YES) {
+        [self performSelector:@selector(loopScrollAnimated) withObject:Nil afterDelay:1];
+    }
 }
 
 #pragma mark - View To UIImage
@@ -232,7 +235,7 @@
     _isScrolling = NO;
     CGFloat offsetX = _loopScrollView.contentOffset.x;
     NSInteger page = (offsetX + _loopScrollView.frame.size.width / 2) / _loopScrollView.frame.size.width;
-    if (_loopScrollViewDelegate && [_loopScrollViewDelegate respondsToSelector:@selector(loopScrollView:didSelectWithIndex:)]) {
+    if (_loopScrollViewDelegate && [_loopScrollViewDelegate respondsToSelector:@selector(loopScrollView:scrollDidEndScrollingAnimationWithIndex:)]) {
         [_loopScrollViewDelegate loopScrollView:self scrollDidEndScrollingAnimationWithIndex:page-1];
     }
 }
@@ -245,7 +248,7 @@
     if (_isScrolling == NO) {
         CGFloat offsetX = _loopScrollView.contentOffset.x;
         NSInteger page = (offsetX + _loopScrollView.frame.size.width / 2) / _loopScrollView.frame.size.width;
-        if (_loopScrollViewDelegate && [_loopScrollViewDelegate respondsToSelector:@selector(loopScrollView:scrollDidEndScrollingAnimationWithIndex:)]) {
+        if (_loopScrollViewDelegate && [_loopScrollViewDelegate respondsToSelector:@selector(loopScrollView:didSelectWithIndex:)]) {
             [_loopScrollViewDelegate loopScrollView:self didSelectWithIndex:page-1];
         }
     }
